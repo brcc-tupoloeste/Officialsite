@@ -469,6 +469,155 @@
       .contact-intro,.contact-list{padding:20px}
       footer .container{align-items:flex-start;flex-direction:column}
     }
+  
+    /* Compact Officials Menu + Modal */
+    .official-menu-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+    }
+    .official-menu-card{
+      background:#fff;
+      border:1px solid var(--border);
+      border-top:4px solid var(--red);
+      border-radius:var(--radius);
+      padding:24px 18px;
+      box-shadow:var(--shadow);
+      text-align:center;
+      cursor:pointer;
+      transition:.2s ease;
+    }
+    .official-menu-card:hover{
+      transform:translateY(-3px);
+      border-color:#ffd1d9;
+    }
+    .official-menu-card .menu-icon{
+      width:58px;
+      height:58px;
+      margin:0 auto 14px;
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      background:var(--red-soft);
+      color:var(--red-dark);
+      font-size:27px;
+      border:2px solid #ffd8df;
+    }
+    .official-menu-card h3{
+      margin:0 0 7px;
+      color:var(--ink);
+      font-size:19px;
+    }
+    .official-menu-card p{
+      margin:0 0 14px;
+      color:var(--muted);
+      font-size:13px;
+    }
+    .official-menu-card .view-btn{
+      display:inline-block;
+      padding:8px 13px;
+      border-radius:10px;
+      background:var(--red);
+      color:#fff;
+      font-size:13px;
+      font-weight:900;
+    }
+
+    .official-modal{
+      display:none;
+      position:fixed;
+      inset:0;
+      z-index:999;
+      background:rgba(0,0,0,.58);
+      padding:18px;
+      overflow:auto;
+    }
+    .official-modal.show{display:block}
+    .official-modal-box{
+      width:min(760px,100%);
+      margin:40px auto;
+      background:#fff;
+      border-radius:22px;
+      box-shadow:0 24px 70px rgba(0,0,0,.25);
+      overflow:hidden;
+      animation:modalIn .18s ease-out;
+    }
+    @keyframes modalIn{
+      from{transform:translateY(12px);opacity:.2}
+      to{transform:translateY(0);opacity:1}
+    }
+    .official-modal-head{
+      background:linear-gradient(135deg,var(--red),var(--red-dark));
+      color:#fff;
+      padding:18px 20px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:15px;
+    }
+    .official-modal-head h3{
+      margin:0;
+      font-size:21px;
+    }
+    .modal-close{
+      width:38px;
+      height:38px;
+      border:1px solid rgba(255,255,255,.45);
+      background:rgba(255,255,255,.12);
+      color:#fff;
+      border-radius:10px;
+      cursor:pointer;
+      font-size:22px;
+      line-height:1;
+    }
+    .official-modal-body{
+      padding:18px;
+    }
+    .people-list{
+      display:grid;
+      gap:10px;
+    }
+    .person-row{
+      display:flex;
+      align-items:center;
+      gap:13px;
+      padding:12px;
+      border:1px solid var(--border);
+      border-radius:13px;
+      background:#fff;
+    }
+    .person-badge{
+      width:44px;
+      height:44px;
+      flex:0 0 auto;
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      background:var(--red-soft);
+      color:var(--red-dark);
+      border:2px solid #ffd8df;
+      font-weight:900;
+      font-size:12px;
+    }
+    .person-row strong{
+      display:block;
+      color:var(--ink);
+      font-size:15px;
+    }
+    .person-row span{
+      display:block;
+      color:var(--muted);
+      font-size:12px;
+      margin-top:2px;
+    }
+
+    @media(max-width:700px){
+      .official-menu-grid{grid-template-columns:1fr}
+      .official-modal{padding:10px}
+      .official-modal-box{margin:18px auto}
+      .official-modal-head h3{font-size:18px}
+    }
+
   </style>
 </head>
 <body>
@@ -616,172 +765,100 @@
       <div class="container">
         <div class="section-head">
           <div>
-            <h2>Barangay <span>Officials</span></h2>
-            <p>Current Barangay and Sangguniang Kabataan officials of Barangay Tupol Oeste.</p>
+            <h2>Officials & <span>Personnel</span></h2>
+            <p>Select a group below to view the complete list. This keeps the main website short and easy to browse.</p>
           </div>
         </div>
 
-        <div class="grid grid-4">
-          <div class="card official">
-            <div class="avatar">PB</div>
-            <h3>Joselito M. Tormon</h3>
-            <small>Punong Barangay</small>
-          </div>
+        <div class="official-menu-grid">
+          <button class="official-menu-card" type="button" onclick="openOfficialsModal('barangayModal')">
+            <div class="menu-icon">🏛</div>
+            <h3>Barangay Officials</h3>
+            <p>Punong Barangay and Sangguniang Barangay Members</p>
+            <span class="view-btn">View List</span>
+          </button>
 
-          <div class="card official">
-            <div class="avatar">KG</div>
-            <h3>Ardito F. Huyo</h3>
-            <small>Sangguniang Barangay Member</small>
-          </div>
+          <button class="official-menu-card" type="button" onclick="openOfficialsModal('skModal')">
+            <div class="menu-icon">👥</div>
+            <h3>Sangguniang Kabataan</h3>
+            <p>SK Chairperson and Sangguniang Kabataan Members</p>
+            <span class="view-btn">View List</span>
+          </button>
 
-          <div class="card official">
-            <div class="avatar">KG</div>
-            <h3>Eusebia A. Cuarte</h3>
-            <small>Sangguniang Barangay Member</small>
-          </div>
-
-          <div class="card official">
-            <div class="avatar">KG</div>
-            <h3>Victoria T. Sapra</h3>
-            <small>Sangguniang Barangay Member</small>
-          </div>
-
-          <div class="card official">
-            <div class="avatar">KG</div>
-            <h3>Jonel G. Rosano</h3>
-            <small>Sangguniang Barangay Member</small>
-          </div>
-
-          <div class="card official">
-            <div class="avatar">KG</div>
-            <h3>Custodio T. Marcon Jr.</h3>
-            <small>Sangguniang Barangay Member</small>
-          </div>
-
-          <div class="card official">
-            <div class="avatar">KG</div>
-            <h3>Jolyn P. Lagutang</h3>
-            <small>Sangguniang Barangay Member</small>
-          </div>
-
-          <div class="card official">
-            <div class="avatar">KG</div>
-            <h3>Ian Paul B. Moscardon</h3>
-            <small>Sangguniang Barangay Member</small>
-          </div>
-        </div>
-
-        <div style="height:32px"></div>
-
-        <div class="section-head" style="margin-bottom:18px">
-          <div>
-            <h2 style="font-size:25px">Sangguniang <span>Kabataan</span></h2>
-          </div>
-        </div>
-
-        <div class="grid grid-4">
-          <div class="card official">
-            <div class="avatar">SK</div>
-            <h3>Erika Mae M. Alviar</h3>
-            <small>SK Chairperson</small>
-          </div>
-
-          <div class="card official">
-            <div class="avatar">SK</div>
-            <h3>Wennard M. Reyes</h3>
-            <small>SK Member</small>
-          </div>
-
-          <div class="card official">
-            <div class="avatar">SK</div>
-            <h3>Donar H. Angelada</h3>
-            <small>SK Member</small>
-          </div>
-
-          <div class="card official">
-            <div class="avatar">SK</div>
-            <h3>Hanelyn G. Robles</h3>
-            <small>SK Member</small>
-          </div>
-
-          <div class="card official">
-            <div class="avatar">SK</div>
-            <h3>Jamil S. Moneva</h3>
-            <small>SK Member</small>
-          </div>
-
-          <div class="card official">
-            <div class="avatar">SK</div>
-            <h3>Muktadir A. Hambangan</h3>
-            <small>SK Member</small>
-          </div>
-
-          <div class="card official">
-            <div class="avatar">SK</div>
-            <h3>April Rose P. Tormon</h3>
-            <small>SK Member</small>
-          </div>
-        </div>
-
-        <div style="height:32px"></div>
-
-        <div class="section-head" style="margin-bottom:18px">
-          <div>
-            <h2 style="font-size:25px">Barangay <span>Tanods</span></h2>
-          </div>
-        </div>
-
-        <div class="grid grid-4">
-          <div class="card official">
-            <div class="avatar">BT</div>
-            <h3>Rio M. Tormon</h3>
-            <small>Barangay Tanod</small>
-          </div>
-
-          <div class="card official">
-            <div class="avatar">BT</div>
-            <h3>Arsenia H. Angelada</h3>
-            <small>Barangay Tanod</small>
-          </div>
-
-          <div class="card official">
-            <div class="avatar">BT</div>
-            <h3>Johnjie S. Moneva</h3>
-            <small>Barangay Tanod</small>
-          </div>
-
-          <div class="card official">
-            <div class="avatar">BT</div>
-            <h3>Elmar A. Eurolfan</h3>
-            <small>Barangay Tanod</small>
-          </div>
-
-          <div class="card official">
-            <div class="avatar">BT</div>
-            <h3>Mheljun T. Casquete</h3>
-            <small>Barangay Tanod</small>
-          </div>
-
-          <div class="card official">
-            <div class="avatar">BT</div>
-            <h3>Remywviel E. Robles</h3>
-            <small>Barangay Tanod</small>
-          </div>
-
-          <div class="card official">
-            <div class="avatar">BT</div>
-            <h3>Lemuel B. Rosano</h3>
-            <small>Barangay Tanod</small>
-          </div>
-
-          <div class="card official">
-            <div class="avatar">BT</div>
-            <h3>Marcos J. Alinday</h3>
-            <small>Barangay Tanod</small>
-          </div>
+          <button class="official-menu-card" type="button" onclick="openOfficialsModal('tanodModal')">
+            <div class="menu-icon">🛡️</div>
+            <h3>Barangay Tanods</h3>
+            <p>Barangay peace and security personnel</p>
+            <span class="view-btn">View List</span>
+          </button>
         </div>
       </div>
     </section>
+
+    <!-- Barangay Officials Modal -->
+    <div class="official-modal" id="barangayModal" onclick="closeModalOutside(event,'barangayModal')">
+      <div class="official-modal-box">
+        <div class="official-modal-head">
+          <h3>Barangay Officials</h3>
+          <button class="modal-close" type="button" onclick="closeOfficialsModal('barangayModal')">&times;</button>
+        </div>
+        <div class="official-modal-body">
+          <div class="people-list">
+            <div class="person-row"><div class="person-badge">PB</div><div><strong>Joselito M. Tormon</strong><span>Punong Barangay</span></div></div>
+            <div class="person-row"><div class="person-badge">KG</div><div><strong>Ardito F. Huyo</strong><span>Sangguniang Barangay Member</span></div></div>
+            <div class="person-row"><div class="person-badge">KG</div><div><strong>Eusebia A. Cuarte</strong><span>Sangguniang Barangay Member</span></div></div>
+            <div class="person-row"><div class="person-badge">KG</div><div><strong>Victoria T. Sapra</strong><span>Sangguniang Barangay Member</span></div></div>
+            <div class="person-row"><div class="person-badge">KG</div><div><strong>Jonel G. Rosano</strong><span>Sangguniang Barangay Member</span></div></div>
+            <div class="person-row"><div class="person-badge">KG</div><div><strong>Custodio T. Marcon Jr.</strong><span>Sangguniang Barangay Member</span></div></div>
+            <div class="person-row"><div class="person-badge">KG</div><div><strong>Jolyn P. Lagutang</strong><span>Sangguniang Barangay Member</span></div></div>
+            <div class="person-row"><div class="person-badge">KG</div><div><strong>Ian Paul B. Moscardon</strong><span>Sangguniang Barangay Member</span></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SK Modal -->
+    <div class="official-modal" id="skModal" onclick="closeModalOutside(event,'skModal')">
+      <div class="official-modal-box">
+        <div class="official-modal-head">
+          <h3>Sangguniang Kabataan</h3>
+          <button class="modal-close" type="button" onclick="closeOfficialsModal('skModal')">&times;</button>
+        </div>
+        <div class="official-modal-body">
+          <div class="people-list">
+            <div class="person-row"><div class="person-badge">SK</div><div><strong>Erika Mae M. Alviar</strong><span>SK Chairperson</span></div></div>
+            <div class="person-row"><div class="person-badge">SK</div><div><strong>Wennard M. Reyes</strong><span>SK Member</span></div></div>
+            <div class="person-row"><div class="person-badge">SK</div><div><strong>Donar H. Angelada</strong><span>SK Member</span></div></div>
+            <div class="person-row"><div class="person-badge">SK</div><div><strong>Hanelyn G. Robles</strong><span>SK Member</span></div></div>
+            <div class="person-row"><div class="person-badge">SK</div><div><strong>Jamil S. Moneva</strong><span>SK Member</span></div></div>
+            <div class="person-row"><div class="person-badge">SK</div><div><strong>Muktadir A. Hambangan</strong><span>SK Member</span></div></div>
+            <div class="person-row"><div class="person-badge">SK</div><div><strong>April Rose P. Tormon</strong><span>SK Member</span></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tanod Modal -->
+    <div class="official-modal" id="tanodModal" onclick="closeModalOutside(event,'tanodModal')">
+      <div class="official-modal-box">
+        <div class="official-modal-head">
+          <h3>Barangay Tanods</h3>
+          <button class="modal-close" type="button" onclick="closeOfficialsModal('tanodModal')">&times;</button>
+        </div>
+        <div class="official-modal-body">
+          <div class="people-list">
+            <div class="person-row"><div class="person-badge">BT</div><div><strong>Rio M. Tormon</strong><span>Barangay Tanod</span></div></div>
+            <div class="person-row"><div class="person-badge">BT</div><div><strong>Arsenia H. Angelada</strong><span>Barangay Tanod</span></div></div>
+            <div class="person-row"><div class="person-badge">BT</div><div><strong>Johnjie S. Moneva</strong><span>Barangay Tanod</span></div></div>
+            <div class="person-row"><div class="person-badge">BT</div><div><strong>Elmar A. Eurolfan</strong><span>Barangay Tanod</span></div></div>
+            <div class="person-row"><div class="person-badge">BT</div><div><strong>Mheljun T. Casquete</strong><span>Barangay Tanod</span></div></div>
+            <div class="person-row"><div class="person-badge">BT</div><div><strong>Remywviel E. Robles</strong><span>Barangay Tanod</span></div></div>
+            <div class="person-row"><div class="person-badge">BT</div><div><strong>Lemuel B. Rosano</strong><span>Barangay Tanod</span></div></div>
+            <div class="person-row"><div class="person-badge">BT</div><div><strong>Marcos J. Alinday</strong><span>Barangay Tanod</span></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <section id="programs">
       <div class="container">
@@ -877,6 +954,36 @@
     });
 
     document.getElementById('year').textContent = new Date().getFullYear();
+  
+    function openOfficialsModal(id){
+      const modal = document.getElementById(id);
+      if(!modal) return;
+      modal.classList.add('show');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeOfficialsModal(id){
+      const modal = document.getElementById(id);
+      if(!modal) return;
+      modal.classList.remove('show');
+      document.body.style.overflow = '';
+    }
+
+    function closeModalOutside(event,id){
+      if(event.target.id === id){
+        closeOfficialsModal(id);
+      }
+    }
+
+    document.addEventListener('keydown', function(event){
+      if(event.key === 'Escape'){
+        document.querySelectorAll('.official-modal.show').forEach(function(modal){
+          modal.classList.remove('show');
+        });
+        document.body.style.overflow = '';
+      }
+    });
+
   </script>
 </body>
 </html>
