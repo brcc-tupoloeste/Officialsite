@@ -617,30 +617,167 @@
         <div class="section-head">
           <div>
             <h2>Barangay <span>Officials</span></h2>
-            <p>Current barangay officials and their respective committee assignments.</p>
+            <p>Current Barangay and Sangguniang Kabataan officials of Barangay Tupol Oeste.</p>
           </div>
         </div>
 
         <div class="grid grid-4">
           <div class="card official">
             <div class="avatar">PB</div>
-            <h3>Punong Barangay</h3>
-            <small>Name of Punong Barangay</small>
+            <h3>Joselito M. Tormon</h3>
+            <small>Punong Barangay</small>
           </div>
+
           <div class="card official">
             <div class="avatar">KG</div>
-            <h3>Barangay Kagawad</h3>
-            <small>Committee Assignment</small>
+            <h3>Ardito F. Huyo</h3>
+            <small>Sangguniang Barangay Member</small>
           </div>
+
           <div class="card official">
             <div class="avatar">KG</div>
-            <h3>Barangay Kagawad</h3>
-            <small>Committee Assignment</small>
+            <h3>Eusebia A. Cuarte</h3>
+            <small>Sangguniang Barangay Member</small>
           </div>
+
+          <div class="card official">
+            <div class="avatar">KG</div>
+            <h3>Victoria T. Sapra</h3>
+            <small>Sangguniang Barangay Member</small>
+          </div>
+
+          <div class="card official">
+            <div class="avatar">KG</div>
+            <h3>Jonel G. Rosano</h3>
+            <small>Sangguniang Barangay Member</small>
+          </div>
+
+          <div class="card official">
+            <div class="avatar">KG</div>
+            <h3>Custodio T. Marcon Jr.</h3>
+            <small>Sangguniang Barangay Member</small>
+          </div>
+
+          <div class="card official">
+            <div class="avatar">KG</div>
+            <h3>Jolyn P. Lagutang</h3>
+            <small>Sangguniang Barangay Member</small>
+          </div>
+
+          <div class="card official">
+            <div class="avatar">KG</div>
+            <h3>Ian Paul B. Moscardon</h3>
+            <small>Sangguniang Barangay Member</small>
+          </div>
+        </div>
+
+        <div style="height:32px"></div>
+
+        <div class="section-head" style="margin-bottom:18px">
+          <div>
+            <h2 style="font-size:25px">Sangguniang <span>Kabataan</span></h2>
+          </div>
+        </div>
+
+        <div class="grid grid-4">
           <div class="card official">
             <div class="avatar">SK</div>
-            <h3>SK Chairperson</h3>
-            <small>Sangguniang Kabataan</small>
+            <h3>Erika Mae M. Alviar</h3>
+            <small>SK Chairperson</small>
+          </div>
+
+          <div class="card official">
+            <div class="avatar">SK</div>
+            <h3>Wennard M. Reyes</h3>
+            <small>SK Member</small>
+          </div>
+
+          <div class="card official">
+            <div class="avatar">SK</div>
+            <h3>Donar H. Angelada</h3>
+            <small>SK Member</small>
+          </div>
+
+          <div class="card official">
+            <div class="avatar">SK</div>
+            <h3>Hanelyn G. Robles</h3>
+            <small>SK Member</small>
+          </div>
+
+          <div class="card official">
+            <div class="avatar">SK</div>
+            <h3>Jamil S. Moneva</h3>
+            <small>SK Member</small>
+          </div>
+
+          <div class="card official">
+            <div class="avatar">SK</div>
+            <h3>Muktadir A. Hambangan</h3>
+            <small>SK Member</small>
+          </div>
+
+          <div class="card official">
+            <div class="avatar">SK</div>
+            <h3>April Rose P. Tormon</h3>
+            <small>SK Member</small>
+          </div>
+        </div>
+
+        <div style="height:32px"></div>
+
+        <div class="section-head" style="margin-bottom:18px">
+          <div>
+            <h2 style="font-size:25px">Barangay <span>Tanods</span></h2>
+          </div>
+        </div>
+
+        <div class="grid grid-4">
+          <div class="card official">
+            <div class="avatar">BT</div>
+            <h3>Rio M. Tormon</h3>
+            <small>Barangay Tanod</small>
+          </div>
+
+          <div class="card official">
+            <div class="avatar">BT</div>
+            <h3>Arsenia H. Angelada</h3>
+            <small>Barangay Tanod</small>
+          </div>
+
+          <div class="card official">
+            <div class="avatar">BT</div>
+            <h3>Johnjie S. Moneva</h3>
+            <small>Barangay Tanod</small>
+          </div>
+
+          <div class="card official">
+            <div class="avatar">BT</div>
+            <h3>Elmar A. Eurolfan</h3>
+            <small>Barangay Tanod</small>
+          </div>
+
+          <div class="card official">
+            <div class="avatar">BT</div>
+            <h3>Mheljun T. Casquete</h3>
+            <small>Barangay Tanod</small>
+          </div>
+
+          <div class="card official">
+            <div class="avatar">BT</div>
+            <h3>Remywviel E. Robles</h3>
+            <small>Barangay Tanod</small>
+          </div>
+
+          <div class="card official">
+            <div class="avatar">BT</div>
+            <h3>Lemuel B. Rosano</h3>
+            <small>Barangay Tanod</small>
+          </div>
+
+          <div class="card official">
+            <div class="avatar">BT</div>
+            <h3>Marcos J. Alinday</h3>
+            <small>Barangay Tanod</small>
           </div>
         </div>
       </div>
@@ -684,29 +821,29 @@
       <div class="container">
         <div class="contact-box">
           <div class="contact-intro">
-            <h2>Emergency & Barangay Contacts</h2>
+            <h2>Barangay Contact Information</h2>
             <p>
-              Important verified barangay and emergency contact numbers can be published here for quick access.
+              Official office hours and contact details will be published here once finalized.
             </p>
-            <a class="btn btn-white" href="#">☎ Barangay Office</a>
+            <div class="btn btn-white" style="cursor:default">Information Coming Soon</div>
           </div>
 
           <div class="contact-list">
             <div class="contact-item">
-              <strong>Barangay Office</strong>
-              <span>Contact number to be added</span>
+              <strong>Barangay Office Contact Number</strong>
+              <span>Coming Soon</span>
+            </div>
+            <div class="contact-item">
+              <strong>Office Hours</strong>
+              <span>Coming Soon</span>
             </div>
             <div class="contact-item">
               <strong>Barangay Health Station</strong>
-              <span>Contact number to be added</span>
+              <span>Coming Soon</span>
             </div>
             <div class="contact-item">
-              <strong>Police / Emergency</strong>
-              <span>Verified local number to be added</span>
-            </div>
-            <div class="contact-item">
-              <strong>Fire / MDRRMO</strong>
-              <span>Verified local number to be added</span>
+              <strong>Emergency Contacts</strong>
+              <span>Coming Soon</span>
             </div>
           </div>
         </div>
